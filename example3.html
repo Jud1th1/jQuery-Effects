@@ -46,6 +46,25 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script>
+		//Fading object out
+		$('#fadeoutbox').click(function(){
+			$('#box').fadeOut('normal');
+		});
+		
+		//Fading object back in
+		$('#fadeinbox').click(function(){
+			$('#box').fadeIn(3000, 'swing', function(){alert('done');});
+		});
+
+		//Fading out to 20% opactiy 
+		$('#fadeto20box').click(function(){
+			$('#box').fadeTo(3000, 0.2); //enter the duration and amount it should fade to 
+		});
+
+		//Fading to 100%
+		$('#fadeto100box').click(function(){
+			$('#box').fadeTo(3000, 1);
+		});
         
     </script>
 
