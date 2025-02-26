@@ -30,6 +30,8 @@
 			background:#4C90D8; 
 			padding:20px;
 			color:#fff; 
+			position: absolute;
+			left: 50px;
 		}
 
 	</style>
@@ -51,9 +53,39 @@
     <div id="box">Chickens and Llamas!</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+	
     <script>
-        
+        //animate() method allow you to animate a lot but not all CSS properties. It gives you a lot of functionality in the jQuery effects library 
+		//Grow our box using animate() method
+		$('#growbox').click(function(){
+			$('#box').animate({width:"710px"}); //inside our animate method we will pass an object (We will learn more about objects later on)
+		});
+
+		//Grow the text inside of the box
+		$('#growtext').click(function(){
+			$('#box').animate({ fontSize:"24px"}); //Note: can not use the css version (font-size) because jQuery will think you want to subtract size from font
+		});
+
+		//Move the box
+		//To animate the location of the box, use positioning to move it from one place to another 
+		//Add position to our #box css
+		$('#movebox').click(function(){
+			$('#box').animate({ left:"+=300px"}, 5000); //+= will add 300px to the 50px we set in our css and move it to the left hand side & then we can add 5 seconds to our duration time
+		});
+
+		//Do all the animations
+		$('#doall').click(function(){
+			$('#box').animate({width:"710px", fontSize:"24px", left:"+=300px"}, 1500);
+		});
+
+		//Last step is to do the animations in a sequence (one at a time). Do this using callback functions
+		$('#sequence').click(function(){
+			$('#box').animate({width:"710px"}, 1500, function(){
+				$('#box').animate({ fontSize:"24px"}, 1500, function(){
+					$('#box').animate({ left:"+=300px"}, 1500);
+				});
+			});
+		});
     </script>
 
 </body>
