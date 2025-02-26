@@ -45,7 +45,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script>
-        
+		//hide the box
+        $('#hidebox').click(function(){
+			$('#box').hide('fast'); //you can put a animation value in the hide()  such as normal, slow, fast or a number(miliseconds)
+		}); 
+
+		//show the box
+		$('#showbox').click(function(){
+			$('#box').show('slow');
+		});
+
+		//toggle between the 2 functions
+		$('#togglebox').click(function(){
+			$('#box').toggle(3000, function(){alert('done!');});  //you can also and a function after the animation sequence to do something else like- alert 
+		});
+		
+
+
+
     </script>
 
 </body>
