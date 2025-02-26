@@ -43,10 +43,24 @@ nav ul li a:hover { background:#D5D4D4; }
     <div id="box"></div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script> <!--This is the jQuery Plugin for Easing-->
     
+
     <script>
-        
+        //Box will slide up:
+         $('#slideupbox').click(function(){
+            $('#box').slideUp('slow');
+         });
+
+         //Box will slide down:
+         $('#slidedownbox').click(function(){
+            $('#box').slideDown('2000', 'swing'); //add some easing  using 'swing'
+         });
+
+         //Toggle between the two prev. functions
+         $('#slidetogglebox').click(function(){
+            $('#box').slideToggle('2000', 'easeInCirc');//add some easing using the jQuery plugin above. Test out a few like Outbounce, OutQuart, inCubic, inSine etc..
+         });  
     </script>
 
 </body>
